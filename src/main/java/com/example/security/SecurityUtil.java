@@ -18,6 +18,21 @@ public class SecurityUtil {
         return builder.toString();
     }
 
+    public static String decrypt(String encryptedPassword, int shift) {
+        StringBuilder builder = new StringBuilder();
+    
+        for (char c : encryptedPassword.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                char base = Character.isUpperCase(c) ? 'A' : (Character.isLowerCase(c) ? 'a' : '0');
+                int range = Character.isDigit(c) ? 10 : 26;
+                builder.append((char) (base + (c - base - shift + range) % range));
+            } else {
+                builder.append(c);
+            }
+        }
+        return builder.toString();
+    }
+
     public static void validation(User user, String password){
         if(user == null){
             throw new IllegalArgumentException("User Not Found");

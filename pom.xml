@@ -4,7 +4,7 @@
   <groupId>com.example.security</groupId>
   <artifactId>security-util</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>security-util</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -15,12 +15,18 @@
       <scope>test</scope>
     </dependency>
 
-  <dependency>
+    <dependency>
+      <groupId>com.example.pojo</groupId>
+      <artifactId>user</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+  <!-- <dependency>
     <groupId>com.example.pojo</groupId>
     <artifactId>user</artifactId>
     <version>1.0-SNAPSHOT</version>
     <scope>system</scope>
     <systemPath>${project.basedir}/src/main/java/webapp/WEB-INF/lib/user-1.0-SNAPSHOT.jar</systemPath>
-  </dependency>
+  </dependency> -->
   </dependencies>
 </project>
